@@ -1,12 +1,11 @@
-import includes from 'lodash/includes';
-import tokenTypes from './tokenTypes';
-import Indentation from './Indentation';
-import InlineBlock from './InlineBlock';
-import Params from './Params';
+import { tokenTypes } from './tokenTypes.mjs';
+import { Indentation } from './Indentation.mjs';
+import { InlineBlock } from './InlineBlock.mjs';
+import { Params } from './Params.mjs';
 
 const trimSpacesEnd = str => str.replace(/[ \t]+$/u, '');
 
-export default class Formatter {
+export class Formatter {
   /**
    * @param {Object} cfg
    *  @param {String} cfg.language
@@ -137,7 +136,7 @@ export default class Formatter {
       tokenTypes.OPEN_PAREN,
       tokenTypes.LINE_COMMENT
     ];
-    if (!includes(preserveWhitespaceFor, this.previousToken().type)) {
+    if (!preserveWhitespaceFor.includes(this.previousToken().type)) {
       query = trimSpacesEnd(query);
     }
     query += this.cfg.uppercase ? token.value.toUpperCase() : token.value;

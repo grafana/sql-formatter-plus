@@ -1,6 +1,6 @@
-import Formatter from '../core/Formatter';
-import Tokenizer from '../core/Tokenizer';
-import tokenTypes from '../core/tokenTypes';
+import { Formatter } from '../core/Formatter.mjs';
+import { Tokenizer } from '../core/Tokenizer.mjs';
+import { tokenTypes } from '../core/tokenTypes.mjs';
 
 const reservedWords = [
   'A',
@@ -423,7 +423,7 @@ const tokenOverride = (token, previousReservedToken) => {
 
 let tokenizer;
 
-export default class PlSqlFormatter {
+export class PlSqlFormatter {
   /**
    * @param {Object} cfg Different set of configurations
    */

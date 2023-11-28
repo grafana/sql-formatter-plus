@@ -1,7 +1,7 @@
 /**
  * Constants for token types
  */
-export default {
+export const tokenTypes = {
   WHITESPACE: 'whitespace',
   WORD: 'word',
   STRING: 'string',

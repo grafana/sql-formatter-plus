@@ -1,5 +1,8 @@
-import sqlFormatter from './../src/sqlFormatter';
-import behavesLikeSqlFormatter from './behavesLikeSqlFormatter';
+import { it, describe, } from 'node:test';
+import { expect } from 'expect';
+
+import { sqlFormatter } from '../src/sqlFormatter.mjs';
+import { behavesLikeSqlFormatter } from './behavesLikeSqlFormatter.mjs';
 import dedent from 'dedent-js';
 
 describe('StandardSqlFormatter', () => {

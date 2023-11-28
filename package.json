@@ -3,7 +3,8 @@
   "version": "1.3.6",
   "description": "Formats whitespace in a SQL query to make it more readable",
   "license": "MIT",
-  "main": "lib/sqlFormatter.js",
+  "main": "src/sqlFormatter.mjs",
+  "type": "module",
   "keywords": [
     "sql",
     "formatter",
@@ -16,23 +17,10 @@
     "Uku Pattak"
   ],
   "files": [
-    "dist",
-    "lib",
     "src"
   ],
   "scripts": {
-    "clean": "rimraf lib dist",
-    "lint": "eslint .",
-    "format": "prettier --write \"**/*.{js,jsx,md,json,css,html,prettierrc,eslintrc,babelrc}\"",
-    "check:format": "prettier --check \"**/*.{js,jsx,md,json,css,html,prettierrc,eslintrc,babelrc}\"",
-    "test": "jest",
-    "test:watch": "npm run test -- --watch",
-    "check": "npm run lint && npm run check:format && npm run test",
-    "build": "npm run build:commonjs && npm run build:umd && npm run build:umd:min",
-    "build:commonjs": "babel src --out-dir lib",
-    "build:umd": "webpack --mode development src/sqlFormatter.js --output dist/sql-formatter.js",
-    "build:umd:min": "webpack --mode production src/sqlFormatter.js --output dist/sql-formatter.min.js",
-    "prepublish": "npm run clean && npm run check && npm run build"
+    "test": "node ./test/index.mjs"
   },
   "repository": {
     "type": "git",
@@ -41,31 +29,11 @@
   "bugs": {
     "url": "https://github.com/kufii/sql-formatter-plus/issues"
   },
-  "dependencies": {
-    "@babel/polyfill": "^7.7.0",
-    "lodash": "^4.17.15"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/core": "^7.7.2",
-    "@babel/preset-env": "^7.7.1",
-    "babel-eslint": "^10.0.3",
-    "babel-plugin-add-module-exports": "^1.0.2",
     "dedent-js": "^1.0.1",
-    "eslint": "^6.6.0",
-    "eslint-config-adpyke-es6": "^1.4.13",
-    "eslint-config-prettier": "^6.5.0",
-    "jest": "^24.9.0",
-    "prettier": "^1.19.1",
-    "rimraf": "^3.0.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
-  },
-  "jest": {
-    "roots": [
-      "test"
-    ],
-    "testRegex": ".*Test",
-    "collectCoverage": true
+    "expect": "^29.7.0",
+    "jest": "^29.7.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.6.0"
   }
 }

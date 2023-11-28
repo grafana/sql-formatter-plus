@@ -1,11 +1,14 @@
-import sqlFormatter from './../src/sqlFormatter';
+import { it } from 'node:test';
+import { expect } from 'expect';
+
+import { sqlFormatter } from '../src/sqlFormatter.mjs';
 import dedent from 'dedent-js';
 
 /**
  * Core tests for all SQL formatters
  * @param {String} language
  */
-export default function behavesLikeSqlFormatter(language) {
+export function behavesLikeSqlFormatter(language) {
   const format = (query, cfg = {}) => sqlFormatter.format(query, { ...cfg, language });
 
   it('uses given indent config for indention', () => {

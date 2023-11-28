@@ -1,4 +1,4 @@
-import tokenTypes from './tokenTypes';
+import { tokenTypes } from './tokenTypes.mjs';
 
 const INLINE_MAX_LENGTH = 50;
 
@@ -9,7 +9,7 @@ const INLINE_MAX_LENGTH = 50;
  * These blocks are formatted on a single line, unlike longer parenthesized
  * expressions where open-parenthesis causes newline and increase of indentation.
  */
-export default class InlineBlock {
+export class InlineBlock {
   constructor() {
     this.level = 0;
   }

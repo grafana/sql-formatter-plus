@@ -1,4 +1,7 @@
-import sqlFormatter from './../src/sqlFormatter';
+import { it, describe, } from 'node:test';
+import { expect } from 'expect';
+
+import { sqlFormatter } from '../src/sqlFormatter.mjs';
 
 describe('sqlFormatter', () => {
   it('throws error when unsupported language parameter specified', () => {

@@ -1,5 +1,5 @@
-import Formatter from '../core/Formatter';
-import Tokenizer from '../core/Tokenizer';
+import { Formatter } from '../core/Formatter.mjs';
+import { Tokenizer } from '../core/Tokenizer.mjs';
 
 const reservedWords = [
   'ABS',
@@ -548,7 +548,7 @@ const reservedNewlineWords = [
 
 let tokenizer;
 
-export default class Db2Formatter {
+export class Db2Formatter {
   /**
    * @param {Object} cfg Different set of configurations
    */

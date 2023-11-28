@@ -1,8 +1,9 @@
-import isEmpty from 'lodash/isEmpty';
-import escapeRegExp from 'lodash/escapeRegExp';
-import tokenTypes from './tokenTypes';
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions#escaping
+const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-export default class Tokenizer {
+import { tokenTypes } from './tokenTypes.mjs';
+
+export class Tokenizer {
   /**
    * @param {Object} cfg
    *  @param {String[]} cfg.reservedWords Reserved words in SQL
@@ -110,7 +111,7 @@ export default class Tokenizer {
   }
 
   createPlaceholderRegex(types, pattern) {
-    if (isEmpty(types)) {
+    if (types == null) {
       return false;
     }
     const typesRegex = types.map(escapeRegExp).join('|');

@@ -1,7 +1,7 @@
 /**
  * Handles placeholder replacement with given params.
  */
-export default class Params {
+export class Params {
   /**
    * @param {Object} params
    */

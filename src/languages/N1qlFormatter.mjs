@@ -1,5 +1,5 @@
-import Formatter from '../core/Formatter';
-import Tokenizer from '../core/Tokenizer';
+import { Formatter } from '../core/Formatter.mjs';
+import { Tokenizer } from '../core/Tokenizer.mjs';
 
 const reservedWords = [
   'ALL',
@@ -221,7 +221,7 @@ const reservedNewlineWords = [
 
 let tokenizer;
 
-export default class N1qlFormatter {
+export class N1qlFormatter {
   /**
    * @param {Object} cfg Different set of configurations
    */

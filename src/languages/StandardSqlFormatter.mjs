@@ -1,5 +1,5 @@
-import Formatter from '../core/Formatter';
-import Tokenizer from '../core/Tokenizer';
+import { Formatter } from '../core/Formatter.mjs';
+import { Tokenizer } from '../core/Tokenizer.mjs';
 
 const reservedWords = [
   'ACCESSIBLE',
@@ -324,7 +324,7 @@ const reservedNewlineWords = [
 
 let tokenizer;
 
-export default class StandardSqlFormatter {
+export class StandardSqlFormatter {
   /**
    * @param {Object} cfg Different set of configurations
    */
