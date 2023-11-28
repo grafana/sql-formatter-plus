@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Constants for token types
  */
@@ -2426,4 +2428,4 @@ const format = (query, cfg = {}) => {
   }
 };
 
-export { format };
+exports.format = format;
